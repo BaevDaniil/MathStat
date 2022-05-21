@@ -49,6 +49,18 @@ def task4():
     samples20 = np.random.normal(0, 1, size=20)
     samples100 = np.random.normal(0, 1, size=100)
 
+    student_20 = get_student_mo(samples20, alpha)
+    student_100 = get_student_mo(samples100, alpha)
+
+    chi_20 = get_chi_sigma(samples20, alpha)
+    chi_100 = get_chi_sigma(samples100, alpha)
+
+    as_mo_20 = get_as_mo(samples20, alpha)
+    as_mo_100 = get_as_mo(samples100, alpha)
+
+    as_d_20 = get_as_sigma(samples20, alpha)
+    as_d_100 = get_as_sigma(samples100, alpha)
+
     fig, ax = plt.subplots(1, 2)
     fig.set_figheight(9.6)
     fig.set_figwidth(12.8)
@@ -56,21 +68,23 @@ def task4():
     ax[0].set_ylim([0,1])
     ax[0].hist(samples20, 10, density = 1, edgecolor = 'black')
     ax[0].set_title('N(0,1) hist, n = 20')
+    ax[0].plot([as_mo_20[0], as_mo_20[0]], [0, 1], color='r', marker = '.', linewidth = 1, label = 'min_mo')
+    ax[0].plot([as_mo_20[1], as_mo_20[1]], [0, 1], color='r', marker = '.', linewidth = 1, label = 'max_mo')
+    ax[0].plot([as_mo_20[0] - as_d_20[1], as_mo_20[0] - as_d_20[1]], [0, 1], color='g', marker = '.', linewidth = 1, label = 'min_mo - max_sigma')
+    ax[0].plot([as_mo_20[1] + as_d_20[1], as_mo_20[1] + as_d_20[1]], [0, 1], color='g', marker = '.', linewidth = 1, label = 'max_mo - max_sigma')
     ax[1].set_ylim([0,1])
     ax[1].hist(samples100, 10, density = 1, edgecolor = 'black')
     ax[1].set_title('N(0,1) hist, n = 100')
+    ax[1].plot([as_mo_100[0], as_mo_100[0]], [0, 1], color='r', marker='.', linewidth=1, label='min_mo')
+    ax[1].plot([as_mo_100[1], as_mo_100[1]], [0, 1], color='r', marker='.', linewidth=1, label='max_mo')
+    ax[1].plot([as_mo_100[0] - as_d_100[1], as_mo_100[0] - as_d_100[1]], [0, 1], color='g', marker='.', linewidth=1, label='min_mo - max_sigma')
+    ax[1].plot([as_mo_100[1] + as_d_100[1], as_mo_100[1] + as_d_100[1]], [0, 1], color='g', marker='.', linewidth=1, label='max_mo - max_sigma')
     plt.savefig('task4_data/hist.png')
 
     fig, ax = plt.subplots(2, 2)
     fig.set_figheight(9.6)
     fig.set_figwidth(12.8)
     plt.subplots_adjust(wspace = 0.5, hspace = 1)
-
-    student_20 = get_student_mo(samples20, alpha)
-    student_100 = get_student_mo(samples100, alpha)
-
-    chi_20 = get_chi_sigma(samples20, alpha)
-    chi_100 = get_chi_sigma(samples100, alpha)
 
     ax[0][0].plot([student_20[0], student_20[1]], [0.3, 0.3], color='r', marker = '.', linewidth = 1, label = 'm interval, n = 20')
     ax[0][0].plot([student_100[0], student_100[1]], [0.6, 0.6], color='blue', marker = '.', linewidth = 1, label = 'm interval, n = 100')
@@ -89,12 +103,6 @@ def task4():
         f"\t m: " + str(student_20) + " \t sigma: " + str(chi_20) + "\n"
         f"n = 100 \n"
         f"\t m: " + str(student_100) + " \t sigma: " + str(chi_100) + "\n")
-
-    as_mo_20 = get_as_mo(samples20, alpha)
-    as_mo_100 = get_as_mo(samples100, alpha)
-
-    as_d_20 = get_as_sigma(samples20, alpha)
-    as_d_100 = get_as_sigma(samples100, alpha)
 
     ax[1][0].plot([as_mo_20[0], as_mo_20[1]], [0.3, 0.3], color='r', marker = '.', linewidth = 1, label = 'm interval, n = 20')
     ax[1][0].plot([as_mo_100[0], as_mo_100[1]], [0.6, 0.6], color='blue', marker = '.', linewidth = 1, label = 'm interval, n = 100')
