@@ -1,0 +1,17 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Постановка задачи}{3}{section.1}%
+\contentsline {section}{\numberline {2}Теория}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Представление данных}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Простая линейная регрессия}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Метод наименьших модулей}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Предварительная обработка данных}{5}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Коэффициент Жаккара}{5}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Процедура оптимизации}{6}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Реализация}{6}{section.3}%
+\contentsline {section}{\numberline {4}Результаты}{6}{section.4}%
+\contentsline {section}{\numberline {5}Обсуждение}{13}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Модель дрейфа}{13}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Гистограммы скорректированных моделей и объединенной выборки}{13}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Коэффициент Жаккара. Оптимальное значение коэффициента калибровки}{13}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Ссылка на репозиторий}{13}{section.6}%
+\contentsline {section}{Список литературы}{14}{section.6}%
